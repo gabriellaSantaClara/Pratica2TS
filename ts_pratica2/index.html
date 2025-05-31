@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Estatísticas da Turma</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Cadastro de Alunos</h1>
+  
+  <form id="form-aluno">
+    <input type="text" id="nome" placeholder="Nome completo" required />
+    <input type="number" id="idade" placeholder="Idade" required />
+    <input type="number" id="altura" placeholder="Altura (cm)" required />
+    <input type="number" id="peso" placeholder="Peso (kg)" required />
+    <button type="submit">Adicionar Aluno</button>
+  </form>
+
+  <h2>Estatísticas da Turma</h2>
+  <div id="estatisticas">
+    <p>Total de Alunos: <span id="numAlunos">0</span></p>
+    <p>Média de Idades: <span id="mediaIdades">0</span></p>
+    <p>Média de Alturas: <span id="mediaAlturas">0</span></p>
+    <p>Média de Pesos: <span id="mediaPesos">0</span></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
