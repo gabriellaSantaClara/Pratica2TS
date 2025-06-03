@@ -3,21 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <title>Estatísticas da Turma</title>
-  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="padding: 20px; max-width: 600px; margin: auto;">
+
   <h1>Cadastro de Alunos</h1>
-  
+
   <form id="form-aluno">
-    <input type="text" id="nome" placeholder="Nome completo" required />
-    <input type="number" id="idade" placeholder="Idade" required />
-    <input type="number" id="altura" placeholder="Altura (cm)" required />
-    <input type="number" id="peso" placeholder="Peso (kg)" required />
+    <input type="text" id="nome" placeholder="Nome completo" required
+      style="display: block; margin-bottom: 10px; padding: 8px; width: 100%;" />
+    <input type="number" min="1" id="idade" placeholder="Idade" required
+      style="display: block; margin-bottom: 10px; padding: 8px; width: 100%;" />
+    <input type="text" id="altura" placeholder="Altura (cm)" required
+      style="display: block; margin-bottom: 10px; padding: 8px; width: 100%;" />
+    <input type="text" id="peso" placeholder="Peso (kg)" required
+      style="display: block; margin-bottom: 10px; padding: 8px; width: 100%;" />
     <button type="submit">Adicionar Aluno</button>
   </form>
 
   <h2>Estatísticas da Turma</h2>
-  <div id="estatisticas">
+
+  <div id="estatisticas" style="background-color: #f5f5f5; padding: 15px; margin-top: 20px; border-radius: 8px;">
     <p>Total de Alunos: <span id="numAlunos">0</span></p>
     <p>Média de Idades: <span id="mediaIdades">0</span></p>
     <p>Média de Alturas: <span id="mediaAlturas">0</span></p>
