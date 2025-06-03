@@ -46,10 +46,20 @@ const form = document.getElementById('form-aluno') as HTMLFormElement;
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const nome = (document.getElementById('nome') as HTMLInputElement).value;
-  const idade = +(document.getElementById('idade') as HTMLInputElement).value;
-  const altura = +(document.getElementById('altura') as HTMLInputElement).value;
-  const peso = +(document.getElementById('peso') as HTMLInputElement).value;
+  const nome = (document.getElementById('nome') as HTMLInputElement).value.trim();
+  const idade = +(document.getElementById('idade') as HTMLInputElement).value.trim();
+  const alturaInput = (document.getElementById('altura') as HTMLInputElement).value.trim();
+  const pesoInput = (document.getElementById('peso') as HTMLInputElement).value.trim();
+
+  const numeroRegex = /^[0-9]+([.,][0-9]+)?$/;
+
+  if (!numeroRegex.test(alturaInput) || !numeroRegex.test(pesoInput)) {
+    alert("Altura e peso devem conter apenas números válidos. Use vírgula ou ponto como separador decimal.");
+    return;
+  }
+
+  const altura = parseFloat(alturaInput.replace(',', '.'));
+  const peso = parseFloat(pesoInput.replace(',', '.'));
 
   const novoAluno = new Aluno(Date.now(), nome, idade, altura, peso);
   turma.adicionarAluno(novoAluno);
